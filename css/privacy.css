@@ -1,0 +1,21 @@
+.site-body {
+  margin: 0;
+  padding: 32px;
+  background: #f7f9fb;
+  color: #0f1724;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* Мобильная адаптация */
+@media (max-width: 520px) {
+  .site-body {
+    padding: 16px;
+  }
+}
