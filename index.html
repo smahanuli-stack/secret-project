@@ -1,112 +1,341 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Satisfy&display=swap" rel="stylesheet">
   <title>Sara Vera - Работа в Польше</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f9f9f9;
-      color: #333;
-    }
-    header {
-      background: #e63946;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-    }
-    .contact {
-      margin-top: 10px;
-      font-size: 14px;
-    }
-    .offer {
-      display: flex;
-      justify-content: space-around;
-      padding: 20px;
-      background: #fff;
-    }
-    .offer-item {
-      text-align: center;
-      width: 30%;
-      padding: 10px;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      background: #f1f1f1;
-    }
-    .form-section {
-      background: #fff;
-      padding: 20px;
-      margin: 20px;
-      border-radius: 5px;
-      border: 1px solid #ddd;
-    }
-    .form-section h2 {
-      margin-top: 0;
-    }
-    form {
-      display: flex;
-      flex-direction: column;
-    }
-    label {
-      margin: 10px 0 5px;
-    }
-    input {
-      padding: 8px;
-      border: 1px solid #ccc;
-      border-radius: 3px;
-    }
-    button {
-      margin-top: 15px;
-      padding: 10px;
-      background: #e63946;
-      color: #fff;
-      border: none;
-      border-radius: 3px;
-      cursor: pointer;
-    }
-    button:hover {
-      background: #d62828;
-    }
-  </style>
 </head>
 <body>
+<header>
+  <nav class="navbar">
+    <div class="logo">
+      <span class="logo-text">SaraVera</span>
+    </div>
 
-  <header>
-    <h1>Sara Vera</h1>
-    <div class="contact">
-      Телефон: +48 607 776 867 | Языки: 🇺🇦 🇷🇺 🇵🇱
-    </div>
-  </header>
+    <!-- Чекбокс для управления бургером -->
+    <input type="checkbox" id="burger-toggle" class="burger-toggle">
+    <label for="burger-toggle" class="burger" aria-hidden="true">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
 
-  <section class="offer">
-    <div class="offer-item">
-      <h3>💰 28 злотых/час нетто</h3>
+    <!-- Меню -->
+    <ul class="nav-menu">
+      <li><a href="index.html">Главная</a></li>
+      <li><a href="onas.html">О фирме</a></li>
+      <li><a href="ofertypracy.html">Предложения работы</a></li>
+      <li><a href="dlafirm.html">Для фирм</a></li>
+      <li><a href="dlarab.html">Для работников</a></li>
+      <li><a href="contact.html">Контакты</a></li>
+    </ul>
+
+    <!-- Языки и кнопка -->
+    <div class="nav-actions">
+      <div class="lang-switch">
+        <img src="polish-flag.png" alt="Polski">
+        <ul class="lang-dropdown">
+          <li><a href="#">Polski</a></li>
+          <li><a href="#">English</a></li>
+          <li><a href="#">Deutsch</a></li>
+        </ul>
+      </div>
     </div>
-    <div class="offer-item">
-      <h3>🚌 Транспорт до работы</h3>
+  </nav>
+</header>
+
+<div class="main">
+  <h2>Твой комфортный старт в Польше</h2>
+</div>
+
+<div class="hero">
+  <div class="hero-box">
+    <img src="css/img/hands.jpg" alt="Для работодателей">
+    <a href="dlafirm.html" class="btn">Для фирм</a>
+  </div>
+  <div class="hero-box">
+    <img src="css/img/people.jpg" alt="Для работников">
+    <a href="dlarab.html" class="btn">Для работников</a>
+  </div>
+</div>
+
+<section class="about">
+  <img src="img/man.jpeg" alt="О компании" class="about-img">
+  <div class="about-text">
+    <h2>О нас.</h2>
+    <p>
+      Мы — агентство по трудоустройству, которое помогает людям находить работу быстро, безопасно и без лишнего стресса. Наша цель — помочь каждому человеку найти подходящую вакансию в соответствии с его опытом, навыками.Мы сотрудничаем с проверенными работодателями и предлагаем различные вакансии.
+      Наша команда сопровождает кандидатов на всех этапах: от подбора вакансии до выхода на работу. Мы стараемся сделать процесс трудоустройства максимально простым и понятным.
+      Если вы ищете работу и хотите быстро начать зарабатывать — мы поможем вам найти подходящую возможность.
+    </p>
+  </div>
+</section>
+
+
+
+
+  <section class="steps-container">
+    <!-- стрелки по бокам для широкого экрана -->
+    <button class="arrow side left">&#10094;</button>
+    <div class="steps-wrapper">
+      <div class="step"><span class="number">01</span><p>Przyjmujemy Twoje zgłoszenie.</p></div>
+      <div class="step"><span class="number">02</span><p>Analizujemy dostarczone aplikacje.</p></div>
+      <div class="step"><span class="number">03</span><p>Zapraszamy Cię na rozmowę wstępną.</p></div>
+      <div class="step"><span class="number">04</span><p>Dobieramy ofertę pracy do Twoich oczekiwań.</p></div>
+      <div class="step"><span class="number">05</span><p>Podpisujemy umowę i ustalamy szczegóły.</p></div>
+      <div class="step"><span class="number">06</span><p>Rozpoczynasz pracę w naszej firmie.</p></div>
     </div>
-    <div class="offer-item">
-      <h3>🔑 Жильё</h3>
+    <button class="arrow side right">&#10095;</button>
+
+    <!-- кнопки снизу для узкого экрана -->
+    <div class="scroll-controls">
+      <button class="arrow bottom left">&#10094;</button>
+      <button class="arrow bottom right">&#10095;</button>
     </div>
   </section>
 
-  <section class="form-section">
-    <h2>Получить предложение</h2>
-    <form>
-      <label for="name">Имя</label>
-      <input type="text" id="name" name="name" required>
+  <script>
+    const wrapper = document.querySelector('.steps-wrapper');
+    const sideLeft = document.querySelector('.arrow.side.left');
+    const sideRight = document.querySelector('.arrow.side.right');
+    const bottomLeft = document.querySelector('.arrow.bottom.left');
+    const bottomRight = document.querySelector('.arrow.bottom.right');
 
-      <label for="phone">Телефон (Viber/Telegram)</label>
-      <input type="text" id="phone" name="phone" required>
+    const stepWidth = 280;
+    let scrollAmount = 0;
 
-      <button type="submit">Оставить заявку</button>
-    </form>
-  </section>
+    function scrollLeft() {
+      scrollAmount -= stepWidth;
+      if (scrollAmount < 0) scrollAmount = 0;
+      wrapper.scrollTo({ left: scrollAmount, behavior: 'smooth' });
+    }
 
+    function scrollRight() {
+      scrollAmount += stepWidth;
+      if (scrollAmount > wrapper.scrollWidth) scrollAmount = wrapper.scrollWidth;
+      wrapper.scrollTo({ left: scrollAmount, behavior: 'smooth' });
+    }
+
+    sideLeft.addEventListener('click', scrollLeft);
+    sideRight.addEventListener('click', scrollRight);
+    bottomLeft.addEventListener('click', scrollLeft);
+    bottomRight.addEventListener('click', scrollRight);
+  </script>
+
+
+
+
+
+
+
+
+
+
+<div class="faq-container">
+  <div class="faq-image">
+    <img src="css/img/faq.jpg" alt="FAQ изображение">
+  </div>
+
+  <div class="faq-content">
+    <h2>Быстрые ответы</h2>
+    <div class="faq-item">
+      <div class="faq-question">Как работает сервис?<span class="icon">+</span></div>
+      <div class="faq-answer">Наш сервис помогает пользователям находить нужную информацию.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Кому подходит сервис?<span class="icon">+</span></div>
+      <div class="faq-answer">Он подходит как для специалистов, так и для обычных пользователей.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Сколько это стоит?<span class="icon">+</span></div>
+      <div class="faq-answer">Базовые функции бесплатны, дополнительные доступны по подписке.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Где доступен сервис?<span class="icon">+</span></div>
+      <div class="faq-answer">Сервис доступен онлайн, без ограничений по географии.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Когда лучше начать?<span class="icon">+</span></div>
+      <div class="faq-answer">Лучше начать прямо сейчас, чтобы быстрее получить результат.</div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // FAQ toggle
+  const items = document.querySelectorAll('.faq-item');
+  items.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    question.addEventListener('click', () => {
+      items.forEach(i => {
+        i.classList.remove('active');
+        i.querySelector('.icon').textContent = '+';
+      });
+      item.classList.add('active');
+      question.querySelector('.icon').textContent = '−';
+    });
+  });
+
+  // Mobile menu: при открытии меню добавляем отступ сверху для body,
+  // чтобы меню не перекрывало .main и другие блоки.
+  (function() {
+    const burgerToggle = document.getElementById('burger-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    const navbar = document.querySelector('.navbar');
+
+    function openMenu() {
+      // даём время браузеру отрисовать меню (если нужно)
+      requestAnimationFrame(() => {
+        const menuHeight = navMenu.getBoundingClientRect().height;
+        // учитываем высоту navbar (если меню позиционируется под navbar)
+        const navbarHeight = navbar.getBoundingClientRect().height;
+        // устанавливаем padding-top для body равный сумме navbar + меню
+        document.body.style.paddingTop = (navbarHeight + menuHeight) + 'px';
+        document.body.classList.add('menu-open');
+      });
+    }
+
+    function closeMenu() {
+      document.body.style.paddingTop = '';
+      document.body.classList.remove('menu-open');
+    }
+
+    burgerToggle.addEventListener('change', () => {
+      if (burgerToggle.checked) openMenu();
+      else closeMenu();
+    });
+
+    // при ресайзе пересчитываем отступ, если меню открыто
+    window.addEventListener('resize', () => {
+      if (burgerToggle.checked) {
+        const menuHeight = navMenu.getBoundingClientRect().height;
+        const navbarHeight = navbar.getBoundingClientRect().height;
+        document.body.style.paddingTop = (navbarHeight + menuHeight) + 'px';
+      }
+    });
+
+    // если пользователь кликает по ссылке в меню — закрываем меню
+    navMenu.addEventListener('click', (e) => {
+      if (e.target.tagName === 'A' && burgerToggle.checked) {
+        burgerToggle.checked = false;
+        closeMenu();
+      }
+    });
+  })();
+</script>
+
+
+<!-- Всплывающее окно согласия -->
+<div id="consent-banner" class="consent-banner" role="dialog" aria-labelledby="consent-title">
+  <style>
+    .consent-banner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      background: #0b66c3;
+      color: #fff;
+      padding: 14px;
+      box-shadow: 0 -4px 12px rgba(0,0,0,0.2);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      z-index: 9999;
+      font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    }
+    .consent-banner h2 {
+      margin: 0;
+      font-size: 1rem;
+    }
+    .consent-banner p {
+      margin: 0;
+      font-size: 0.85rem;
+      line-height: 1.4;
+    }
+    .consent-actions {
+      display: flex;
+      gap: 6px;
+      margin-top: 6px;
+    }
+    .consent-btn {
+      flex: 1;
+      min-width: 80px;
+      padding: 5px 10px; /* уменьшенные кнопки */
+      border: none;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: background 0.25s ease;
+    }
+    .consent-btn.accept {
+      background: #b0bf1a;
+      color: #1f2937;
+    }
+    .consent-btn.accept:hover {
+      background: #9aa514;
+    }
+    .consent-btn.decline {
+      background: #fff;
+      color: #0b66c3;
+    }
+    .consent-btn.decline:hover {
+      background: #f3f4f6;
+    }
+    @media (max-width: 600px) {
+      .consent-banner {
+        padding: 10px;
+      }
+      .consent-actions {
+        flex-direction: column;
+      }
+      .consent-btn {
+        width: 100%;
+      }
+    }
+  </style>
+
+  <h2 id="consent-title">Соглашение с правилами</h2>
+  <p>Мы используем cookie и предоставляем услуги в соответствии с нашей Политикой конфиденциальности, Политикой использования cookie и Правилами и условиями. Продолжая использовать сайт, вы соглашаетесь с этими документами.</p>
+
+  <div class="consent-actions">
+    <button class="consent-btn accept" onclick="acceptConsent()">Согласен</button>
+    <button class="consent-btn decline" onclick="declineConsent()">Отказаться</button>
+  </div>
+</div>
+
+<script>
+  function acceptConsent() {
+    document.getElementById('consent-banner').style.display = 'none';
+    localStorage.setItem('userConsent', 'accepted');
+  }
+  function declineConsent() {
+    // скрываем баннер, но не сохраняем отказ
+    document.getElementById('consent-banner').style.display = 'none';
+  }
+  window.addEventListener('load', function() {
+    const consent = localStorage.getItem('userConsent');
+    if (consent === 'accepted') {
+      document.getElementById('consent-banner').style.display = 'none';
+    } else {
+      document.getElementById('consent-banner').style.display = 'flex';
+    }
+  });
+</script>
+
+
+<footer>
+  <div class="footer-container">
+    <p>&copy; 2026 Sara Vera. Все права защищены.</p>
+    <nav class="footer-links">
+      <a href="privacy.html">Политика конфиденциальности</a>
+      <a href="cookies.html">Политика использования cookie</a>
+      <a href="terms.html">Правила и условия</a>
+      <a href="contact.html">Контакты</a>
+    </nav>
+  </div>
+</footer>
 </body>
 </html>
