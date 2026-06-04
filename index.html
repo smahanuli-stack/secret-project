@@ -2,28 +2,28 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sara Vera — агентство по трудоустройству. Работа в Польше для иностранцев. Быстро, безопасно, без стресса.">
+  <meta property="og:title" content="Sara Vera — Работа в Польше">
+  <meta property="og:description" content="Агентство по трудоустройству Sara Vera. Найдём работу под ваши навыки.">
+  <meta property="og:type" content="website">
   <link rel="stylesheet" href="css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Satisfy&display=swap" rel="stylesheet">
-  <title>Sara Vera - Работа в Польше</title>
+  <title>Sara Vera — Работа в Польше</title>
 </head>
 <body>
+
 <header>
   <nav class="navbar">
-    <div class="logo">
-      <span class="logo-text">SaraVera</span>
-    </div>
+    <a href="index.html" class="logo"><span class="logo-text">SaraVera</span></a>
 
-    <!-- Чекбокс для управления бургером -->
     <input type="checkbox" id="burger-toggle" class="burger-toggle">
-    <label for="burger-toggle" class="burger" aria-hidden="true">
-      <span></span>
-      <span></span>
-      <span></span>
+    <label for="burger-toggle" class="burger" aria-label="Открыть меню" aria-controls="nav-menu">
+      <span></span><span></span><span></span>
     </label>
 
-    <!-- Меню -->
-    <ul class="nav-menu">
-      <li><a href="index.html">Главная</a></li>
+    <ul class="nav-menu" id="nav-menu" role="list">
+      <li><a href="index.html" aria-current="page">Главная</a></li>
       <li><a href="onas.html">О фирме</a></li>
       <li><a href="ofertypracy.html">Предложения работы</a></li>
       <li><a href="dlafirm.html">Для фирм</a></li>
@@ -31,10 +31,9 @@
       <li><a href="contact.html">Контакты</a></li>
     </ul>
 
-    <!-- Языки и кнопка -->
     <div class="nav-actions">
       <div class="lang-switch">
-        <img src="polish-flag.png" alt="Polski">
+        <img src="img/polish-flag.png" alt="Выбрать язык">
         <ul class="lang-dropdown">
           <li><a href="#">Polski</a></li>
           <li><a href="#">English</a></li>
@@ -45,297 +44,189 @@
   </nav>
 </header>
 
-<div class="main">
-  <h2>Твой комфортный старт в Польше</h2>
-</div>
+<main>
 
-<div class="hero">
-  <div class="hero-box">
-    <img src="css/img/hands.jpg" alt="Для работодателей">
-    <a href="dlafirm.html" class="btn">Для фирм</a>
+  <div class="main">
+    <h2>Твой комфортный старт в Польше</h2>
   </div>
-  <div class="hero-box">
-    <img src="css/img/people.jpg" alt="Для работников">
-    <a href="dlarab.html" class="btn">Для работников</a>
-  </div>
-</div>
 
-<section class="about">
-  <img src="css/img/man.jpeg" alt="О компании" class="about-img">
-  <div class="about-text">
-    <h2>О нас.</h2>
-    <p>
-      Мы — агентство по трудоустройству, которое помогает людям находить работу быстро, безопасно и без лишнего стресса. Наша цель — помочь каждому человеку найти подходящую вакансию в соответствии с его опытом, навыками.Мы сотрудничаем с проверенными работодателями и предлагаем различные вакансии.
-      Наша команда сопровождает кандидатов на всех этапах: от подбора вакансии до выхода на работу. Мы стараемся сделать процесс трудоустройства максимально простым и понятным.
-      Если вы ищете работу и хотите быстро начать зарабатывать — мы поможем вам найти подходящую возможность.
-    </p>
-  </div>
-</section>
-
-
-
-
-  <section class="steps-container">
-    <!-- стрелки по бокам для широкого экрана -->
-    <button class="arrow side left">&#10094;</button>
-    <div class="steps-wrapper">
-      <div class="step"><span class="number">01</span><p>Przyjmujemy Twoje zgłoszenie.</p></div>
-      <div class="step"><span class="number">02</span><p>Analizujemy dostarczone aplikacje.</p></div>
-      <div class="step"><span class="number">03</span><p>Zapraszamy Cię na rozmowę wstępną.</p></div>
-      <div class="step"><span class="number">04</span><p>Dobieramy ofertę pracy do Twoich oczekiwań.</p></div>
-      <div class="step"><span class="number">05</span><p>Podpisujemy umowę i ustalamy szczegóły.</p></div>
-      <div class="step"><span class="number">06</span><p>Rozpoczynasz pracę w naszej firmie.</p></div>
+  <div class="hero">
+    <div class="hero-box">
+      <img src="img/hands.jpg" alt="Для работодателей">
+      <a href="dlafirm.html" class="btn">Для фирм</a>
     </div>
-    <button class="arrow side right">&#10095;</button>
+    <div class="hero-box">
+      <img src="img/people.jpg" alt="Для работников">
+      <a href="dlarab.html" class="btn">Для работников</a>
+    </div>
+  </div>
 
-    <!-- кнопки снизу для узкого экрана -->
-    <div class="scroll-controls">
-      <button class="arrow bottom left">&#10094;</button>
-      <button class="arrow bottom right">&#10095;</button>
+  <section class="about" aria-label="О компании">
+    <img src="img/man.jpeg" alt="Сотрудник компании" class="about-img">
+    <div class="about-text">
+      <h2>О нас.</h2>
+      <p>
+        Мы — агентство по трудоустройству, которое помогает людям находить работу быстро, безопасно и без лишнего стресса.
+        Наша цель — помочь каждому человеку найти подходящую вакансию в соответствии с его опытом и навыками.
+        Мы сотрудничаем с проверенными работодателями и предлагаем различные вакансии.
+        Наша команда сопровождает кандидатов на всех этапах: от подбора вакансии до выхода на работу.
+        Если вы ищете работу и хотите быстро начать зарабатывать — мы поможем вам.
+      </p>
     </div>
   </section>
 
-  <script>
-    const wrapper = document.querySelector('.steps-wrapper');
-    const sideLeft = document.querySelector('.arrow.side.left');
-    const sideRight = document.querySelector('.arrow.side.right');
-    const bottomLeft = document.querySelector('.arrow.bottom.left');
-    const bottomRight = document.querySelector('.arrow.bottom.right');
-
-    const stepWidth = 280;
-    let scrollAmount = 0;
-
-    function scrollLeft() {
-      scrollAmount -= stepWidth;
-      if (scrollAmount < 0) scrollAmount = 0;
-      wrapper.scrollTo({ left: scrollAmount, behavior: 'smooth' });
-    }
-
-    function scrollRight() {
-      scrollAmount += stepWidth;
-      if (scrollAmount > wrapper.scrollWidth) scrollAmount = wrapper.scrollWidth;
-      wrapper.scrollTo({ left: scrollAmount, behavior: 'smooth' });
-    }
-
-    sideLeft.addEventListener('click', scrollLeft);
-    sideRight.addEventListener('click', scrollRight);
-    bottomLeft.addEventListener('click', scrollLeft);
-    bottomRight.addEventListener('click', scrollRight);
-  </script>
-
-
-
-
-
-
-
-
-
-
-<div class="faq-container">
-  <div class="faq-image">
-    <img src="css/img/faq.jpg" alt="FAQ изображение">
-  </div>
-
-  <div class="faq-content">
-    <h2>Быстрые ответы</h2>
-    <div class="faq-item">
-      <div class="faq-question">Как работает сервис?<span class="icon">+</span></div>
-      <div class="faq-answer">Наш сервис помогает пользователям находить нужную информацию.</div>
+  <section class="steps-container" aria-label="Этапы сотрудничества">
+    <button class="arrow side left" aria-label="Назад">&#10094;</button>
+    <div class="steps-wrapper" role="list">
+      <div class="step" role="listitem"><span class="number">01</span><p>Принимаем вашу заявку.</p></div>
+      <div class="step" role="listitem"><span class="number">02</span><p>Анализируем предоставленные данные.</p></div>
+      <div class="step" role="listitem"><span class="number">03</span><p>Приглашаем на предварительное собеседование.</p></div>
+      <div class="step" role="listitem"><span class="number">04</span><p>Подбираем вакансию под ваши ожидания.</p></div>
+      <div class="step" role="listitem"><span class="number">05</span><p>Подписываем договор и обсуждаем детали.</p></div>
+      <div class="step" role="listitem"><span class="number">06</span><p>Вы приступаете к работе!</p></div>
     </div>
-    <div class="faq-item">
-      <div class="faq-question">Кому подходит сервис?<span class="icon">+</span></div>
-      <div class="faq-answer">Он подходит как для специалистов, так и для обычных пользователей.</div>
+    <button class="arrow side right" aria-label="Вперёд">&#10095;</button>
+
+    <div class="scroll-controls">
+      <button class="arrow bottom left" aria-label="Назад">&#10094;</button>
+      <button class="arrow bottom right" aria-label="Вперёд">&#10095;</button>
     </div>
-    <div class="faq-item">
-      <div class="faq-question">Сколько это стоит?<span class="icon">+</span></div>
-      <div class="faq-answer">Базовые функции бесплатны, дополнительные доступны по подписке.</div>
+  </section>
+
+  <div class="faq-container" aria-label="Часто задаваемые вопросы">
+    <div class="faq-image">
+      <img src="img/faq.jpg" alt="Часто задаваемые вопросы">
     </div>
-    <div class="faq-item">
-      <div class="faq-question">Где доступен сервис?<span class="icon">+</span></div>
-      <div class="faq-answer">Сервис доступен онлайн, без ограничений по географии.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-question">Когда лучше начать?<span class="icon">+</span></div>
-      <div class="faq-answer">Лучше начать прямо сейчас, чтобы быстрее получить результат.</div>
+    <div class="faq-content">
+      <h2>Быстрые ответы</h2>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Как работает сервис?<span class="icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">Наш сервис помогает находить подходящую работу быстро и безопасно.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Кому подходит сервис?<span class="icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">Он подходит как для опытных специалистов, так и для тех, кто ищет первую работу в Польше.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Сколько это стоит?<span class="icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">Для работников услуги агентства бесплатны.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Где доступен сервис?<span class="icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">Мы работаем онлайн — без ограничений по географии.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Когда лучше начать?<span class="icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">Прямо сейчас — чем раньше вы оставите заявку, тем быстрее получите результат.</div>
+      </div>
     </div>
   </div>
-</div>
 
-<script>
-  // FAQ toggle
-  const items = document.querySelectorAll('.faq-item');
-  items.forEach(item => {
-    const question = item.querySelector('.faq-question');
-    question.addEventListener('click', () => {
-      items.forEach(i => {
-        i.classList.remove('active');
-        i.querySelector('.icon').textContent = '+';
-      });
-      item.classList.add('active');
-      question.querySelector('.icon').textContent = '−';
-    });
-  });
+</main>
 
-  // Mobile menu: при открытии меню добавляем отступ сверху для body,
-  // чтобы меню не перекрывало .main и другие блоки.
-  (function() {
-    const burgerToggle = document.getElementById('burger-toggle');
-    const navMenu = document.querySelector('.nav-menu');
-    const navbar = document.querySelector('.navbar');
-
-    function openMenu() {
-      // даём время браузеру отрисовать меню (если нужно)
-      requestAnimationFrame(() => {
-        const menuHeight = navMenu.getBoundingClientRect().height;
-        // учитываем высоту navbar (если меню позиционируется под navbar)
-        const navbarHeight = navbar.getBoundingClientRect().height;
-        // устанавливаем padding-top для body равный сумме navbar + меню
-        document.body.style.paddingTop = (navbarHeight + menuHeight) + 'px';
-        document.body.classList.add('menu-open');
-      });
-    }
-
-    function closeMenu() {
-      document.body.style.paddingTop = '';
-      document.body.classList.remove('menu-open');
-    }
-
-    burgerToggle.addEventListener('change', () => {
-      if (burgerToggle.checked) openMenu();
-      else closeMenu();
-    });
-
-    // при ресайзе пересчитываем отступ, если меню открыто
-    window.addEventListener('resize', () => {
-      if (burgerToggle.checked) {
-        const menuHeight = navMenu.getBoundingClientRect().height;
-        const navbarHeight = navbar.getBoundingClientRect().height;
-        document.body.style.paddingTop = (navbarHeight + menuHeight) + 'px';
-      }
-    });
-
-    // если пользователь кликает по ссылке в меню — закрываем меню
-    navMenu.addEventListener('click', (e) => {
-      if (e.target.tagName === 'A' && burgerToggle.checked) {
-        burgerToggle.checked = false;
-        closeMenu();
-      }
-    });
-  })();
-</script>
-
-
-<!-- Всплывающее окно согласия -->
-<div id="consent-banner" class="consent-banner" role="dialog" aria-labelledby="consent-title">
-  <style>
-    .consent-banner {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      width: 100%;
-      background: #0b66c3;
-      color: #fff;
-      padding: 14px;
-      box-shadow: 0 -4px 12px rgba(0,0,0,0.2);
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      z-index: 9999;
-      font-family: "Segoe UI", Roboto, Arial, sans-serif;
-    }
-    .consent-banner h2 {
-      margin: 0;
-      font-size: 1rem;
-    }
-    .consent-banner p {
-      margin: 0;
-      font-size: 0.85rem;
-      line-height: 1.4;
-    }
-    .consent-actions {
-      display: flex;
-      gap: 6px;
-      margin-top: 6px;
-    }
-    .consent-btn {
-      flex: 1;
-      min-width: 80px;
-      padding: 5px 10px; /* уменьшенные кнопки */
-      border: none;
-      border-radius: 4px;
-      font-weight: 600;
-      font-size: 0.8rem;
-      cursor: pointer;
-      transition: background 0.25s ease;
-    }
-    .consent-btn.accept {
-      background: #b0bf1a;
-      color: #1f2937;
-    }
-    .consent-btn.accept:hover {
-      background: #9aa514;
-    }
-    .consent-btn.decline {
-      background: #fff;
-      color: #0b66c3;
-    }
-    .consent-btn.decline:hover {
-      background: #f3f4f6;
-    }
-    @media (max-width: 600px) {
-      .consent-banner {
-        padding: 10px;
-      }
-      .consent-actions {
-        flex-direction: column;
-      }
-      .consent-btn {
-        width: 100%;
-      }
-    }
-  </style>
-
+<div id="consent-banner" class="consent-banner" role="dialog" aria-modal="true" aria-labelledby="consent-title">
   <h2 id="consent-title">Соглашение с правилами</h2>
-  <p>Мы используем cookie и предоставляем услуги в соответствии с нашей Политикой конфиденциальности, Политикой использования cookie и Правилами и условиями. Продолжая использовать сайт, вы соглашаетесь с этими документами.</p>
-
+  <p>Мы используем cookie в соответствии с нашей <a href="privacy.html" style="color:#fff">Политикой конфиденциальности</a> и <a href="cookies.html" style="color:#fff">Политикой cookie</a>. Продолжая использовать сайт, вы соглашаетесь с этими документами.</p>
   <div class="consent-actions">
-    <button class="consent-btn accept" onclick="acceptConsent()">Согласен</button>
-    <button class="consent-btn decline" onclick="declineConsent()">Отказаться</button>
+    <button class="consent-btn accept" id="consent-accept">Согласен</button>
+    <button class="consent-btn decline" id="consent-decline">Отказаться</button>
   </div>
 </div>
-
-<script>
-  function acceptConsent() {
-    document.getElementById('consent-banner').style.display = 'none';
-    localStorage.setItem('userConsent', 'accepted');
-  }
-  function declineConsent() {
-    // скрываем баннер, но не сохраняем отказ
-    document.getElementById('consent-banner').style.display = 'none';
-  }
-  window.addEventListener('load', function() {
-    const consent = localStorage.getItem('userConsent');
-    if (consent === 'accepted') {
-      document.getElementById('consent-banner').style.display = 'none';
-    } else {
-      document.getElementById('consent-banner').style.display = 'flex';
-    }
-  });
-</script>
-
 
 <footer>
   <div class="footer-container">
     <p>&copy; 2026 Sara Vera. Все права защищены.</p>
-    <nav class="footer-links">
+    <nav class="footer-links" aria-label="Дополнительные ссылки">
       <a href="privacy.html">Политика конфиденциальности</a>
-      <a href="cookies.html">Политика использования cookie</a>
+      <a href="cookies.html">Политика cookie</a>
       <a href="terms.html">Правила и условия</a>
       <a href="contact.html">Контакты</a>
     </nav>
   </div>
 </footer>
+
+<script>
+  // ===== STEPS SLIDER =====
+  (function () {
+    const wrapper = document.querySelector('.steps-wrapper');
+    if (!wrapper) return;
+    const scrollStep = 280;
+    document.querySelector('.arrow.side.left').addEventListener('click', () => wrapper.scrollBy({ left: -scrollStep, behavior: 'smooth' }));
+    document.querySelector('.arrow.side.right').addEventListener('click', () => wrapper.scrollBy({ left: scrollStep, behavior: 'smooth' }));
+    document.querySelector('.arrow.bottom.left').addEventListener('click', () => wrapper.scrollBy({ left: -scrollStep, behavior: 'smooth' }));
+    document.querySelector('.arrow.bottom.right').addEventListener('click', () => wrapper.scrollBy({ left: scrollStep, behavior: 'smooth' }));
+  })();
+
+  // ===== FAQ ACCORDION =====
+  (function () {
+    document.querySelectorAll('.faq-item').forEach(item => {
+      const btn = item.querySelector('.faq-question');
+      const icon = btn.querySelector('.icon');
+
+      btn.addEventListener('click', () => {
+        const isOpen = item.classList.contains('open');
+
+        // Закрыть все
+        document.querySelectorAll('.faq-item').forEach(i => {
+          i.classList.remove('open');
+          i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+          i.querySelector('.icon').textContent = '+';
+        });
+
+        // Если не был открыт — открыть
+        if (!isOpen) {
+          item.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+          icon.textContent = '−';
+        }
+      });
+    });
+  })();
+
+  // ===== BURGER MENU =====
+  (function () {
+    const toggle = document.getElementById('burger-toggle');
+    const menu = document.querySelector('.nav-menu');
+
+    // Закрывать меню при клике на ссылку
+    menu.addEventListener('click', e => {
+      if (e.target.tagName === 'A' && toggle.checked) {
+        toggle.checked = false;
+      }
+    });
+  })();
+
+  // ===== COOKIE CONSENT =====
+  (function () {
+    const banner = document.getElementById('consent-banner');
+    if (!localStorage.getItem('userConsent')) {
+      banner.style.display = 'flex';
+    }
+    document.getElementById('consent-accept').addEventListener('click', () => {
+      localStorage.setItem('userConsent', 'accepted');
+      banner.style.display = 'none';
+    });
+    document.getElementById('consent-decline').addEventListener('click', () => {
+      localStorage.setItem('userConsent', 'declined');
+      banner.style.display = 'none';
+    });
+  })();
+</script>
+
 </body>
 </html>

@@ -1,135 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Политика использования cookie сайта Sara Vera.">
   <link rel="stylesheet" href="css/style.css">
-  <title>Sara Vera - Работа в Польше</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+  <title>Sara Vera — Политика cookie</title>
 </head>
 <body>
+
 <header>
-    <nav class="navbar">
-      <div class="logo">
-        <span class="logo-text">SaraVera</span>
+  <nav class="navbar">
+    <a href="index.html" class="logo"><span class="logo-text">SaraVera</span></a>
+
+    <input type="checkbox" id="burger-toggle" class="burger-toggle">
+    <label for="burger-toggle" class="burger" aria-label="Открыть меню" aria-controls="nav-menu">
+      <span></span><span></span><span></span>
+    </label>
+
+    <ul class="nav-menu" id="nav-menu" role="list">
+      <li><a href="index.html">Главная</a></li>
+      <li><a href="onas.html">О фирме</a></li>
+      <li><a href="ofertypracy.html">Предложения работы</a></li>
+      <li><a href="dlafirm.html">Для фирм</a></li>
+      <li><a href="dlarab.html">Для работников</a></li>
+      <li><a href="contact.html">Контакты</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <div class="lang-switch">
+        <img src="img/polish-flag.png" alt="Выбрать язык">
+        <ul class="lang-dropdown">
+          <li><a href="#">Polski</a></li>
+          <li><a href="#">English</a></li>
+          <li><a href="#">Deutsch</a></li>
+        </ul>
       </div>
+      <a href="ofertypracy.html" class="btn-find-job">Найди работу</a>
+    </div>
+  </nav>
+</header>
 
-      <!-- Чекбокс для управления бургером -->
-      <input type="checkbox" id="burger-toggle" class="burger-toggle">
-      <label for="burger-toggle" class="burger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </label>
+<main>
+  <div class="doc-page" aria-labelledby="cookies-title">
+    <h1 id="cookies-title">Политика использования cookie</h1>
+    <div class="doc-meta">Последнее обновление: <strong>12 апреля 2026</strong></div>
 
-      <!-- Меню -->
-      <ul class="nav-menu">
-        <li><a href="index.html">Главная</a></li>
-        <li><a href="onas.html">О фирме</a></li>
-        <li><a href="ofertypracy.html">Предложения работы</a></li>
-        <li><a href="dlafirm.html">Для фирм</a></li>
-        <li><a href="dlarab.html">Для работников</a></li>
-        <li><a href="blog.html">Блог</a></li>
-        <li><a href="contact.html">Контакты</a></li>
-      </ul>
+    <h2>Что такое cookie</h2>
+    <p>Cookie — это небольшие текстовые файлы, которые сохраняются на вашем устройстве для обеспечения корректной работы сайта и улучшения пользовательского опыта.</p>
 
-      <!-- Языки и кнопка -->
-      <div class="nav-actions">
-        <div class="lang-switch">
-          <img src="polish-flag.png" alt="Polski">
-          <ul class="lang-dropdown">
-            <li><a href="#">Polski</a></li>
-            <li><a href="#">English</a></li>
-            <li><a href="#">Deutsch</a></li>
-          </ul>
-        </div>
-        <a href="#" class="btn-find-job">Найди работу</a>
-      </div>
-    </nav>
-  </header>
+    <h2>Виды используемых cookie</h2>
+    <ul>
+      <li><strong>Необходимые:</strong> обеспечивают базовую функциональность сайта.</li>
+      <li><strong>Аналитические:</strong> помогают понять, как пользователи взаимодействуют с сайтом.</li>
+      <li><strong>Функциональные:</strong> запоминают ваши предпочтения.</li>
+      <li><strong>Маркетинговые:</strong> используются для персонализированной рекламы.</li>
+    </ul>
 
-<div class="cookies-page" role="main" aria-labelledby="cookies-title">
-  <style>
-    .cookies-page {
-      max-width: 960px;
-      margin: 40px auto;
-      padding: 36px;
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-      font-family: "Segoe UI", Roboto, Arial, sans-serif;
-      color: #1f2937;
-      line-height: 1.6;
-    }
-    .cookies-page h1 {
-      font-size: 2rem;
-      margin-bottom: 0.5em;
-      color: #0b66c3;
-    }
-    .cookies-page h2 {
-      font-size: 1.3rem;
-      margin-top: 1.5em;
-      margin-bottom: 0.5em;
-      color: #374151;
-      border-left: 4px solid #b0bf1a;
-      padding-left: 8px;
-    }
-    .cookies-page p, .cookies-page li {
-      margin-bottom: 0.8em;
-    }
-    .cookies-page ul {
-      padding-left: 20px;
-    }
-    .cookies-meta {
-      font-size: 0.9rem;
-      color: #6b7280;
-      margin-bottom: 1.5em;
-    }
-    @media (max-width: 600px) {
-      .cookies-page {
-        margin: 20px;
-        padding: 20px;
-      }
-      .cookies-page h1 {
-        font-size: 1.6rem;
-      }
-      .cookies-page h2 {
-        font-size: 1.1rem;
-      }
-    }
-  </style>
+    <h2>Управление cookie</h2>
+    <p>Вы можете изменить настройки cookie в браузере или через наш баннер согласия. Отказ от некоторых cookie может ограничить функциональность сайта.</p>
 
-  <h1 id="cookies-title">Политика использования cookie</h1>
-  <div class="cookies-meta">Последнее обновление: <strong>12 апреля 2026</strong></div>
-
-  <h2>Что такое cookie</h2>
-  <p>Cookie — это небольшие текстовые файлы, которые сохраняются на вашем устройстве для обеспечения корректной работы сайта и улучшения пользовательского опыта.</p>
-
-  <h2>Виды используемых cookie</h2>
-  <ul>
-    <li><strong>Необходимые:</strong> обеспечивают базовую функциональность сайта.</li>
-    <li><strong>Аналитические:</strong> помогают понять, как пользователи взаимодействуют с сайтом.</li>
-    <li><strong>Функциональные:</strong> запоминают ваши предпочтения.</li>
-    <li><strong>Маркетинговые:</strong> используются для персонализированной рекламы.</li>
-  </ul>
-
-  <h2>Управление cookie</h2>
-  <p>Вы можете изменить настройки cookie в браузере или через наш баннер согласия. Отказ от некоторых cookie может ограничить функциональность сайта.</p>
-
-  <h2>Передача данных</h2>
-  <p>Информация из cookie может передаваться нашим партнёрам по аналитике и маркетингу с соблюдением требований GDPR и польского законодательства.</p>
-</div>
-
-
+    <h2>Передача данных</h2>
+    <p>Информация из cookie может передаваться нашим партнёрам по аналитике и маркетингу с соблюдением требований GDPR и польского законодательства.</p>
+  </div>
+</main>
 
 <footer>
   <div class="footer-container">
     <p>&copy; 2026 Sara Vera. Все права защищены.</p>
-    <nav class="footer-links">
+    <nav class="footer-links" aria-label="Дополнительные ссылки">
       <a href="privacy.html">Политика конфиденциальности</a>
-      <a href="cookies.html">Политика использования cookie</a>
+      <a href="cookies.html">Политика cookie</a>
       <a href="terms.html">Правила и условия</a>
       <a href="contact.html">Контакты</a>
     </nav>
   </div>
 </footer>
+
+<script>
+  (function () {
+    const toggle = document.getElementById('burger-toggle');
+    const menu = document.querySelector('.nav-menu');
+    if (!toggle || !menu) return;
+    menu.addEventListener('click', e => {
+      if (e.target.tagName === 'A' && toggle.checked) toggle.checked = false;
+    });
+  })();
+</script>
+
 </body>
 </html>
