@@ -1,73 +1,48 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  background-color: #f9f9f9;
-  color: #333;
-}
-
-.header {
-  background-color: #e63946;
-  color: #fff;
-  text-align: center;
-  padding: 40px 20px;
-}
+/* styleonas.css — стили страницы "О нас" */
+/* body и navbar заданы в style.css */
 
 .about-container {
   max-width: 900px;
-  margin: 40px auto;
-  padding: 20px;
+  margin: 50px auto;
+  padding: 0 30px;
 }
 
-.about-info, .mission, .values, .social-links {
-  margin-bottom: 30px;
+.about-info,
+.mission,
+.values,
+.social-links {
+  margin-bottom: 40px;
 }
 
-.about-info h2, .mission h2, .values h2, .social-links h2 {
-  color: #e63946;
+.about-info h2,
+.mission h2,
+.values h2,
+.social-links h2 {
+  color: var(--accent-dark, #9aa514);
   margin-bottom: 15px;
+  font-size: 1.4rem;
+  border-left: 4px solid var(--accent, #b0bf1a);
+  padding-left: 12px;
 }
 
 .values ul {
-  list-style: disc;
-  padding-left: 20px;
-}
-
-.social-links ul {
   list-style: none;
   padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
 }
 
-.social-links li {
-  flex: 1 1 auto;
+.values ul li {
+  padding: 10px 0;
+  border-bottom: 1px solid #e0e0e0;
+  line-height: 1.6;
 }
 
-.social-links a {
-  display: block;
-  padding: 12px;
-  text-align: center;
-  border-radius: 6px;
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
+.values ul li:last-child {
+  border-bottom: none;
 }
 
-.facebook { background-color: #3b5998; }
-.instagram { background-color: #e1306c; }
-.linkedin { background-color: #0077b5; }
-.youtube { background-color: #ff0000; }
-.twitter { background-color: #1da1f2; }
-
-.social-links a:hover {
-  opacity: 0.8;
-}
-
-.footer {
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  padding: 15px;
+@media (max-width: 600px) {
+  .about-container {
+    padding: 0 16px;
+    margin: 30px auto;
+  }
 }

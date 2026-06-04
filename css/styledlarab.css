@@ -1,0 +1,77 @@
+/* styledlarab.css — стили страницы "Для работников" */
+
+.workers-container {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 0 30px;
+}
+
+.workers-intro,
+.workers-benefits,
+.workers-contact {
+  margin-bottom: 40px;
+}
+
+.workers-intro h1 {
+  font-size: 2rem;
+  color: var(--text, #1f2937);
+  margin-bottom: 15px;
+}
+
+.workers-benefits h2,
+.workers-contact h2 {
+  color: var(--accent-dark, #9aa514);
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+  border-left: 4px solid var(--accent, #b0bf1a);
+  padding-left: 12px;
+}
+
+.workers-benefits ul {
+  list-style: none;
+  padding: 0;
+}
+
+.workers-benefits ul li {
+  padding: 12px 0;
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 1.05rem;
+}
+
+.workers-benefits ul li:last-child {
+  border-bottom: none;
+}
+
+.workers-contact a {
+  color: var(--accent-dark, #9aa514);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.workers-contact a:hover {
+  text-decoration: underline;
+}
+
+.cta-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 28px;
+  background: var(--accent, #b0bf1a);
+  color: #1f2937;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background 0.2s;
+}
+
+.cta-btn:hover {
+  background: var(--accent-dark, #9aa514);
+}
+
+@media (max-width: 600px) {
+  .workers-container {
+    padding: 0 16px;
+    margin: 30px auto;
+  }
+}

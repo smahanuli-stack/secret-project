@@ -1,78 +1,41 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  background-color: #f9f9f9;
-  color: #333;
-}
-
-.header {
-  background-color: #e63946;
-  color: #fff;
-  text-align: center;
-  padding: 40px 20px;
-}
+/* styledlafirm.css — стили страницы "Для фирм" */
+/* body и navbar заданы в style.css */
 
 .cooperation-container {
   max-width: 900px;
-  margin: 40px auto;
-  padding: 20px;
+  margin: 50px auto;
+  padding: 0 30px;
 }
 
-.cooperation-info, .benefits, .contact-offer, .social-links {
-  margin-bottom: 30px;
+.cooperation-info,
+.contact-offer,
+.social-links {
+  margin-bottom: 40px;
 }
 
-.cooperation-info h2, .benefits h2, .contact-offer h2, .social-links h2 {
-  color: #e63946;
+.cooperation-info h2,
+.contact-offer h2,
+.social-links h2 {
+  color: var(--accent-dark, #9aa514);
   margin-bottom: 15px;
-}
-
-.benefits ul {
-  list-style: disc;
-  padding-left: 20px;
+  font-size: 1.4rem;
+  border-left: 4px solid var(--accent, #b0bf1a);
+  padding-left: 12px;
 }
 
 .contact-offer a {
-  color: #e63946;
+  color: var(--accent-dark, #9aa514);
   text-decoration: none;
+  font-weight: 600;
 }
 
-.social-links ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
+.contact-offer a:hover {
+  text-decoration: underline;
 }
 
-.social-links li {
-  flex: 1 1 auto;
-}
-
-.social-links a {
-  display: block;
-  padding: 12px;
-  text-align: center;
-  border-radius: 6px;
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-.facebook { background-color: #3b5998; }
-.instagram { background-color: #e1306c; }
-.linkedin { background-color: #0077b5; }
-.youtube { background-color: #ff0000; }
-.twitter { background-color: #1da1f2; }
-
-.social-links a:hover {
-  opacity: 0.8;
-}
-
-.footer {
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  padding: 15px;
+@media (max-width: 600px) {
+  .cooperation-container {
+    padding: 0 16px;
+    margin: 30px auto;
+  }
 }
