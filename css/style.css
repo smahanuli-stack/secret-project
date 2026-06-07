@@ -202,7 +202,7 @@ img {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: url('../img/magazin.jpg');
+  background-image: url('img/magazin.jpg');
   background-size: cover;
   background-position: center;
   filter: grayscale(50%) brightness(70%);
@@ -737,4 +737,29 @@ footer {
   /* Consent */
   .consent-actions { flex-direction: column; }
   .consent-btn { width: 100%; }
+}
+
+/* ===== LANG SWITCH — кнопка текущего языка ===== */
+.lang-current {
+  background: none;
+  border: 2px solid rgba(64,64,64,0.4);
+  border-radius: 20px;
+  padding: 4px 10px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: #404040;
+  white-space: nowrap;
+  transition: border-color 0.2s, background 0.2s;
+  font-family: inherit;
+}
+
+.lang-current:hover {
+  border-color: #404040;
+  background: rgba(255,255,255,0.3);
+}
+
+.logo {
+  text-decoration: none;
+  color: inherit;
 }
