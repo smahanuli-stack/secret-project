@@ -32,11 +32,11 @@
 
     <div class="nav-actions">
       <div class="lang-switch">
-        <button class="lang-current" id="current-lang-label" aria-haspopup="true">🇷🇺 Русский</button>
+        <button class="lang-current" id="current-lang-label" aria-haspopup="true"><img src="https://flagcdn.com/w20/ru.png" alt="ru" style="width:20px;height:14px;object-fit:cover;border-radius:2px;margin-right:6px;vertical-align:middle;"> Русский</button>
         <ul class="lang-dropdown">
-          <li><a href="#" data-lang="ru">🇷🇺 Русский</a></li>
-          <li><a href="#" data-lang="pl">🇵🇱 Polski</a></li>
-          <li><a href="#" data-lang="en">🇬🇧 English</a></li>
+          <li><a href="#" data-lang="ru"><img src="https://flagcdn.com/w20/ru.png" alt="ru" style="width:20px;height:14px;object-fit:cover;border-radius:2px;margin-right:6px;vertical-align:middle;"> Русский</a></li>
+          <li><a href="#" data-lang="pl"><img src="https://flagcdn.com/w20/pl.png" alt="pl" style="width:20px;height:14px;object-fit:cover;border-radius:2px;margin-right:6px;vertical-align:middle;"> Polski</a></li>
+          <li><a href="#" data-lang="en"><img src="https://flagcdn.com/w20/gb.png" alt="en" style="width:20px;height:14px;object-fit:cover;border-radius:2px;margin-right:6px;vertical-align:middle;"> English</a></li>
         </ul>
       </div>
     </div>
@@ -147,6 +147,65 @@
     </nav>
   </div>
 </footer>
+
+
+<script>
+  // STEPS
+  (function () {
+    const wrapper = document.querySelector('.steps-wrapper');
+    if (!wrapper) return;
+    const s = 280;
+    document.querySelector('.arrow.side.left').addEventListener('click', () => wrapper.scrollBy({ left: -s, behavior: 'smooth' }));
+    document.querySelector('.arrow.side.right').addEventListener('click', () => wrapper.scrollBy({ left: s, behavior: 'smooth' }));
+    document.querySelector('.arrow.bottom.left').addEventListener('click', () => wrapper.scrollBy({ left: -s, behavior: 'smooth' }));
+    document.querySelector('.arrow.bottom.right').addEventListener('click', () => wrapper.scrollBy({ left: s, behavior: 'smooth' }));
+  })();
+
+  // FAQ
+  (function () {
+    document.querySelectorAll('.faq-item').forEach(item => {
+      const btn = item.querySelector('.faq-question');
+      const icon = btn.querySelector('.icon');
+      btn.addEventListener('click', () => {
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => {
+          i.classList.remove('open');
+          i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+          i.querySelector('.icon').textContent = '+';
+        });
+        if (!isOpen) {
+          item.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+          icon.textContent = '−';
+        }
+      });
+    });
+  })();
+
+  // BURGER
+  (function () {
+    const toggle = document.getElementById('burger-toggle');
+    const menu = document.querySelector('.nav-menu');
+    if (!toggle || !menu) return;
+    menu.addEventListener('click', e => {
+      if (e.target.tagName === 'A' && toggle.checked) toggle.checked = false;
+    });
+  })();
+
+  // CONSENT
+  (function () {
+    const banner = document.getElementById('consent-banner');
+    if (!localStorage.getItem('userConsent')) banner.style.display = 'flex';
+    document.getElementById('consent-accept').addEventListener('click', () => {
+      localStorage.setItem('userConsent', 'accepted');
+      banner.style.display = 'none';
+    });
+    document.getElementById('consent-decline').addEventListener('click', () => {
+      localStorage.setItem('userConsent', 'declined');
+      banner.style.display = 'none';
+    });
+  })();
+</script>
 
 <script>
 /**
@@ -370,9 +429,9 @@ const TRANSLATIONS = {
    ФЛАГИ и названия языков
 ══════════════════════════════════════════════ */
 const LANG_META = {
-  ru: { label: 'Русский', flag: '🇷🇺' },
-  pl: { label: 'Polski',  flag: '🇵🇱' },
-  en: { label: 'English', flag: '🇬🇧' },
+  ru: { label: 'Русский', flag: 'https://flagcdn.com/w20/ru.png', code: 'ru' },
+  pl: { label: 'Polski',  flag: 'https://flagcdn.com/w20/pl.png', code: 'pl' },
+  en: { label: 'English', flag: 'https://flagcdn.com/w20/gb.png', code: 'en' },
 };
 
 const SUPPORTED_LANGS = ['ru', 'pl', 'en'];
@@ -417,7 +476,8 @@ function applyLang(lang) {
   // Обновляем текущий флаг и название
   const currentLangBtn = document.getElementById('current-lang-label');
   if (currentLangBtn) {
-    currentLangBtn.textContent = `${LANG_META[lang].flag} ${LANG_META[lang].label}`;
+    const m = LANG_META[lang];
+    currentLangBtn.innerHTML = `<img src="${m.flag}" alt="${m.code}" style="width:20px;height:14px;object-fit:cover;border-radius:2px;margin-right:6px;vertical-align:middle;"> ${m.label}`;
   }
 
   // Сохраняем выбор
@@ -433,77 +493,34 @@ function initI18n() {
 
   applyLang(lang);
 
-  // Вешаем обработчики на кнопки смены языка
+  // Открытие/закрытие дропдауна по клику на кнопку
+  document.querySelectorAll('.lang-current').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      const sw = btn.closest('.lang-switch');
+      if (sw) sw.classList.toggle('open');
+    });
+  });
+
+  // Смена языка по клику на пункт меню
   document.querySelectorAll('[data-lang]').forEach(btn => {
     btn.addEventListener('click', e => {
       e.preventDefault();
+      e.stopPropagation();
       applyLang(btn.getAttribute('data-lang'));
-      // Закрываем дропдаун
-      const dd = btn.closest('.lang-dropdown');
-      if (dd) dd.style.display = 'none';
-      setTimeout(() => { if (dd) dd.style.removeProperty('display'); }, 300);
+      const sw = btn.closest('.lang-switch');
+      if (sw) sw.classList.remove('open');
     });
+  });
+
+  // Закрытие при клике в любом другом месте страницы
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.lang-switch.open')
+      .forEach(sw => sw.classList.remove('open'));
   });
 }
 
 document.addEventListener('DOMContentLoaded', initI18n);
-</script>
-<script>
-  // STEPS
-  (function () {
-    const wrapper = document.querySelector('.steps-wrapper');
-    if (!wrapper) return;
-    const s = 280;
-    document.querySelector('.arrow.side.left').addEventListener('click', () => wrapper.scrollBy({ left: -s, behavior: 'smooth' }));
-    document.querySelector('.arrow.side.right').addEventListener('click', () => wrapper.scrollBy({ left: s, behavior: 'smooth' }));
-    document.querySelector('.arrow.bottom.left').addEventListener('click', () => wrapper.scrollBy({ left: -s, behavior: 'smooth' }));
-    document.querySelector('.arrow.bottom.right').addEventListener('click', () => wrapper.scrollBy({ left: s, behavior: 'smooth' }));
-  })();
-
-  // FAQ
-  (function () {
-    document.querySelectorAll('.faq-item').forEach(item => {
-      const btn = item.querySelector('.faq-question');
-      const icon = btn.querySelector('.icon');
-      btn.addEventListener('click', () => {
-        const isOpen = item.classList.contains('open');
-        document.querySelectorAll('.faq-item').forEach(i => {
-          i.classList.remove('open');
-          i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
-          i.querySelector('.icon').textContent = '+';
-        });
-        if (!isOpen) {
-          item.classList.add('open');
-          btn.setAttribute('aria-expanded', 'true');
-          icon.textContent = '−';
-        }
-      });
-    });
-  })();
-
-  // BURGER
-  (function () {
-    const toggle = document.getElementById('burger-toggle');
-    const menu = document.querySelector('.nav-menu');
-    if (!toggle || !menu) return;
-    menu.addEventListener('click', e => {
-      if (e.target.tagName === 'A' && toggle.checked) toggle.checked = false;
-    });
-  })();
-
-  // CONSENT
-  (function () {
-    const banner = document.getElementById('consent-banner');
-    if (!localStorage.getItem('userConsent')) banner.style.display = 'flex';
-    document.getElementById('consent-accept').addEventListener('click', () => {
-      localStorage.setItem('userConsent', 'accepted');
-      banner.style.display = 'none';
-    });
-    document.getElementById('consent-decline').addEventListener('click', () => {
-      localStorage.setItem('userConsent', 'declined');
-      banner.style.display = 'none';
-    });
-  })();
 </script>
 </body>
 </html>

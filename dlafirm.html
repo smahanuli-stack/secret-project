@@ -24,14 +24,13 @@
     </ul>
     <div class="nav-actions">
       <div class="lang-switch">
-        <button class="lang-current" id="current-lang-label">🇷🇺 Русский</button>
+        <button class="lang-current" id="current-lang-label" aria-haspopup="true"><img src="https://flagcdn.com/w20/ru.png" alt="ru" style="width:20px;height:14px;object-fit:cover;border-radius:2px;margin-right:6px;vertical-align:middle;"> Русский</button>
         <ul class="lang-dropdown">
-          <li><a href="#" data-lang="ru">🇷🇺 Русский</a></li>
-          <li><a href="#" data-lang="pl">🇵🇱 Polski</a></li>
-          <li><a href="#" data-lang="en">🇬🇧 English</a></li>
+          <li><a href="#" data-lang="ru"><img src="https://flagcdn.com/w20/ru.png" alt="ru" style="width:20px;height:14px;object-fit:cover;border-radius:2px;margin-right:6px;vertical-align:middle;"> Русский</a></li>
+          <li><a href="#" data-lang="pl"><img src="https://flagcdn.com/w20/pl.png" alt="pl" style="width:20px;height:14px;object-fit:cover;border-radius:2px;margin-right:6px;vertical-align:middle;"> Polski</a></li>
+          <li><a href="#" data-lang="en"><img src="https://flagcdn.com/w20/gb.png" alt="en" style="width:20px;height:14px;object-fit:cover;border-radius:2px;margin-right:6px;vertical-align:middle;"> English</a></li>
         </ul>
       </div>
-      <a href="ofertypracy.html" class="btn-find-job" data-i18n="nav.findjob">Найди работу</a>
     </div>
   </nav>
 </header>
@@ -67,6 +66,14 @@
     </nav>
   </div>
 </footer>
+
+<script>
+  (function () {
+    const t = document.getElementById('burger-toggle'), m = document.querySelector('.nav-menu');
+    if (t && m) m.addEventListener('click', e => { if (e.target.tagName === 'A' && t.checked) t.checked = false; });
+  })();
+</script>
+
 <script>
 /**
  * Sara Vera — i18n.js
@@ -289,9 +296,9 @@ const TRANSLATIONS = {
    ФЛАГИ и названия языков
 ══════════════════════════════════════════════ */
 const LANG_META = {
-  ru: { label: 'Русский', flag: '🇷🇺' },
-  pl: { label: 'Polski',  flag: '🇵🇱' },
-  en: { label: 'English', flag: '🇬🇧' },
+  ru: { label: 'Русский', flag: 'https://flagcdn.com/w20/ru.png', code: 'ru' },
+  pl: { label: 'Polski',  flag: 'https://flagcdn.com/w20/pl.png', code: 'pl' },
+  en: { label: 'English', flag: 'https://flagcdn.com/w20/gb.png', code: 'en' },
 };
 
 const SUPPORTED_LANGS = ['ru', 'pl', 'en'];
@@ -336,7 +343,8 @@ function applyLang(lang) {
   // Обновляем текущий флаг и название
   const currentLangBtn = document.getElementById('current-lang-label');
   if (currentLangBtn) {
-    currentLangBtn.textContent = `${LANG_META[lang].flag} ${LANG_META[lang].label}`;
+    const m = LANG_META[lang];
+    currentLangBtn.innerHTML = `<img src="${m.flag}" alt="${m.code}" style="width:20px;height:14px;object-fit:cover;border-radius:2px;margin-right:6px;vertical-align:middle;"> ${m.label}`;
   }
 
   // Сохраняем выбор
@@ -352,26 +360,34 @@ function initI18n() {
 
   applyLang(lang);
 
-  // Вешаем обработчики на кнопки смены языка
+  // Открытие/закрытие дропдауна по клику на кнопку
+  document.querySelectorAll('.lang-current').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      const sw = btn.closest('.lang-switch');
+      if (sw) sw.classList.toggle('open');
+    });
+  });
+
+  // Смена языка по клику на пункт меню
   document.querySelectorAll('[data-lang]').forEach(btn => {
     btn.addEventListener('click', e => {
       e.preventDefault();
+      e.stopPropagation();
       applyLang(btn.getAttribute('data-lang'));
-      // Закрываем дропдаун
-      const dd = btn.closest('.lang-dropdown');
-      if (dd) dd.style.display = 'none';
-      setTimeout(() => { if (dd) dd.style.removeProperty('display'); }, 300);
+      const sw = btn.closest('.lang-switch');
+      if (sw) sw.classList.remove('open');
     });
+  });
+
+  // Закрытие при клике в любом другом месте страницы
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.lang-switch.open')
+      .forEach(sw => sw.classList.remove('open'));
   });
 }
 
 document.addEventListener('DOMContentLoaded', initI18n);
-</script>
-<script>
-  (function () {
-    const t = document.getElementById('burger-toggle'), m = document.querySelector('.nav-menu');
-    if (t && m) m.addEventListener('click', e => { if (e.target.tagName === 'A' && t.checked) t.checked = false; });
-  })();
 </script>
 </body>
 </html>
